@@ -15,8 +15,8 @@ image = Image.open("original_image.jpg")
 width, height = image.size
 
 # Define the dimensions for the cropped images
-crop_image_width = 1000
-crop_image_height = 1000
+crop_image_width = 910
+crop_image_height = 910
 
 # Crop image and save it
 for left in range(0, width, crop_image_width):
