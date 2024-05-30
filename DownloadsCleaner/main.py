@@ -4,7 +4,7 @@ import shutil
 def main():
     # Source and destination paths
     source_path = r"C:\Users\adhik\Downloads"
-    dest_path = r"C:\Users\adhik\Downloads\SortedItems"
+    dest_path = r"C:\Users\adhik\Downloads"
 
     # Create the destination directory if it doesn't exist
     if not os.path.exists(dest_path):
