@@ -4,6 +4,7 @@ from starlette import status
 from jose import jwt, JWTError 
 from datetime import datetime, timedelta
 from models.models import User
+from models.schemas import Token
 from database.db import Base, engine, Session
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
@@ -32,13 +33,15 @@ def authenticate_user(username: str, password: str, db: db_dependency):
         )
     return db_user
 
-def create_token(user_id: int, username: str, expiry_time: timedelta):
+def create_token(user_id: int, username: str, expiry_time: timedelta = timedelta(minutes=30)):
     to_encode = {
         'id': user_id,
         'user': username,
         'exp': datetime.utcnow() + expiry_time
     }
-    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    token =  jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
+    return token
 
 
 def get_current_user(token: Annotated[str, Depends(oauth2_bearer)], db: db_dependency):
@@ -60,7 +63,10 @@ def get_current_user(token: Annotated[str, Depends(oauth2_bearer)], db: db_depen
                 detail="User is not authenticated"
             )
 
-        return db_user
+        return {
+            "id": db_user.id,
+            "username": db_user.username,
+        }
     except JWTError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

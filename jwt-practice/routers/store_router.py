@@ -19,5 +19,8 @@ def index():
     }
 
 @store_router.get("/test")
-def test(db: db_dependency, user: user_dependency):
-    return user
+def test(user: user_dependency, db: db_dependency):
+    return {
+        "user": user,
+        "database": "Database session is working"
+    }

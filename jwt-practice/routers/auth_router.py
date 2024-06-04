@@ -50,7 +50,7 @@ def create_user(db: db_dependency, user: UserModel):
     db.refresh(new_user)
     return user
 
-@auth_router.post("/login", response_model=Token)
+@auth_router.post("/login")
 def login(db: db_dependency, form: Annotated[OAuth2PasswordRequestForm, Depends()]):
     user = authenticate_user(form.username, form.password, db)
 
@@ -61,5 +61,8 @@ def login(db: db_dependency, form: Annotated[OAuth2PasswordRequestForm, Depends(
         )
     
     token = create_token(user.id, user.username, timedelta(minutes=30))
-    return token
+    return Token(
+        token=token,
+        token_type="bearer"
+    )
 
