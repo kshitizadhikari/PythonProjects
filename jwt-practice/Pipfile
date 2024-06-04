@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+uvicorn = "*"
+fastapi = "*"
+starlette = "*"
+sqlalchemy = "*"
+psycopg2 = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
+passlib = "*"
+bcrypt = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
