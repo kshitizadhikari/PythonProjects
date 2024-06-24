@@ -4,3 +4,9 @@
 [submodule "PythonJWTPractice"]
 	path = PythonJWTPractice
 	url = git@github.com:kshitizadhikari/PythonJWTPractice.git
+[submodule "CSVBasic"]
+	path = CSVBasic
+	url = git@github.com:kshitizadhikari/CSVBasic.git
+[submodule "RabbitMQBasic"]
+	path = RabbitMQBasic
+	url = git@github.com:kshitizadhikari/RabbitMQBasic.git
