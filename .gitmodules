@@ -16,3 +16,9 @@
 [submodule "QuoteScrapper"]
 	path = QuoteScrapper
 	url = git@github.com:kshitizadhikari/QuoteScrapper.git
+[submodule "GifMaker"]
+	path = GifMaker
+	url = git@github.com:kshitizadhikari/GifMaker.git
+[submodule "PythonDownloadsCleaner"]
+	path = PythonDownloadsCleaner
+	url = git@github.com:kshitizadhikari/PythonDownloadsCleaner.git
