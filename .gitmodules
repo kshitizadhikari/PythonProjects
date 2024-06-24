@@ -10,3 +10,9 @@
 [submodule "RabbitMQBasic"]
 	path = RabbitMQBasic
 	url = git@github.com:kshitizadhikari/RabbitMQBasic.git
+[submodule "Blackjack"]
+	path = Blackjack
+	url = git@github.com:kshitizadhikari/BlackJack.git
+[submodule "QuoteScrapper"]
+	path = QuoteScrapper
+	url = git@github.com:kshitizadhikari/QuoteScrapper.git
