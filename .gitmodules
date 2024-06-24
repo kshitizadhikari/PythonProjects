@@ -1,0 +1,6 @@
+[submodule "FinanceTracker"]
+	path = FinanceTracker
+	url = git@github.com:kshitizadhikari/FinanceTracker.git
+[submodule "PythonJWTPractice"]
+	path = PythonJWTPractice
+	url = git@github.com:kshitizadhikari/PythonJWTPractice.git
